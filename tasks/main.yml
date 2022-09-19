@@ -11,6 +11,17 @@
     - ssl_cert is defined
     - ssl_key is defined
 
+- name: Ensure Key folder {{ ssl_cert_path }}
+  file:
+    path: "{{ ssl_cert_path }}"
+    state: directory
+    owner: "{{ ssl_user }}"
+    group: "{{ ssl_group }}"
+    mode: "{{ ssl_key_umask }}"
+  when:
+    - ssl_cert is defined
+    - ssl_key is defined
+
 - name: copy SSLCertificateFile {{ ssl_cert }}
   copy:
     src: "{{ ssl_cert }}"
