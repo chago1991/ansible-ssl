@@ -1,5 +1,7 @@
 ---
 # defaults file for ssl
+ssl_cert_path_remote_machine:    '/etc/nginx/ssl'
+ssl_key_path_remote_machine:     '/etc/nginx/ssl'
 ssl_cert_path:    '/usr/share/foreman-proxy/files/new_ssl/'
 ssl_key_path:     '/usr/share/foreman-proxy/files/new_ssl/'
 ssl_crt_name_for_corp:             'star_corp_adjarabet_com.crt'
