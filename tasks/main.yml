@@ -1,9 +1,9 @@
 ---
 # tasks file for ssl
-- name: Ensure Key folder {{ ssl_key_path }}
+- name: Ensure Key folder {{ ssl_cert_path_remote_machine }}
   file:
-    path: "{{ ssl_key_path }}"
-    state: directory
+    path: "{{ ssl_cert_path_remote_machine }}"
+    state: file
     owner: "{{ ssl_user }}"
     group: "{{ ssl_group }}"
     mode: "{{ ssl_key_umask }}"
