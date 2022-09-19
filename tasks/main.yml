@@ -32,15 +32,3 @@
   when:
     - ssl_cert is defined
     - ssl_key is defined
-
-- name: copy SSLCertificateChainFile {{ ssl_ica }}
-  copy:
-    content: "{{ ssl_ica }}"
-    dest: "{{ ssl_cert_path }}/{{ ssl_ica_name }}"
-    owner: "{{ ssl_user }}"
-    group: "{{ ssl_group }}"
-    mode: "{{ ssl_cert_umask }}"
-  when:
-    - ssl_cert is defined
-    - ssl_key is defined
-    - ssl_ica is defined
